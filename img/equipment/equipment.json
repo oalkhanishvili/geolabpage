@@ -1,0 +1,10 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'geolabclass'
+
+// geolabclass.equipment
+
+[{"id":"1","model":"asf","description":"asfaf","sponsor":"asf","num":"2","image":"asf"}]
