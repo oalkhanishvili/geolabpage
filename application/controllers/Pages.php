@@ -76,6 +76,11 @@ class Pages extends CI_Controller {
 		$this->load->view('user/projects', $data);
 		$this->load->view('user/footer');
 	}
+	public function contact(){
+		$this->load->view('user/header');
+		$this->load->view('user/contact');
+		$this->load->view('user/footer');
+	}
 	public function price(){
 		$this->load->view('user/header');
 		$this->load->view('user/price');
@@ -124,5 +129,3 @@ class Pages extends CI_Controller {
         echo json_encode($html);
 	}
 }
-// asdasdasdasdasdasdsadas;
-//საფას
