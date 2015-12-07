@@ -413,8 +413,7 @@ html, body {
 }
 
 .sec-fiv-li-ins img {
-    margin-top: 80px;
-
+    /* margin-top: 80px; */
 }
 
 .sec-fiv-li-ins h3 {
@@ -458,9 +457,11 @@ html, body {
     font-size: 16px;
     color: #fff;
     padding: 3%;
-    font-family: 'BPGRioniArial';;
+    font-family: 'BPGRioniArial';
 }
-
+.ins-bt-rig-p a{
+    color: aquamarine;
+}
 .form-wrapper {
     position: fixed;
     text-align: center;
@@ -1496,6 +1497,7 @@ article.article div.article-detail a:hover{
 
 }
 .img-txt-wrp .projects-title span{
+    opacity:0;
       color: white;
   text-shadow:
    -1px -1px 0 #000,  
@@ -1516,6 +1518,7 @@ article.article div.article-detail a:hover{
 
 }
 .img-txt-wrp .projects-title:hover span{
+    opacity:1;
     width:100%;
     padding-top:15px;
     top:0;

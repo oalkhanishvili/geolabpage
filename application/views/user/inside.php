@@ -95,12 +95,12 @@
 		<header class="mn-header">
 
 			<nav class="mn-menu-wrapper">
-				
+
 				<ul class="mn-ul">
 					<li class="mn-li mn-show"></li>
 					<li class="mn-li mn-lgn"></li>
 				</ul>
-                <a class="header-click" href="<?=site_url('');?>"></a>                
+                <a class="header-click" href="<?=site_url('');?>"></a>
 				<input type="text" >
 			</nav>
 
@@ -113,12 +113,14 @@
 					<?php if ( !empty($project) ): ?>
 				<?php foreach ( $project as $item ): ?>
 					<li class="sec-fiv-li sec-fiv-li-ins">
-						<a href="<?php echo $item['project_url']; ?>" target="_blank">
-							<img src="<?php echo base_url('img/img/'.$item['project_image']); ?>" alt="Lecturer" style="position:static; width: 118px;
+						<a href="<?php echo site_url('pages/projects/'.$item['id']); ?>">
+              <span style="position:relative; width: 118px;
     height: 118px;
     display: inline-block;
     border-radius: 50%;
     box-shadow: 0 0 0 11px rgba(117, 129, 175, 0.4);">
+							<img src="<?php echo base_url('img/img/'.$item['project_image']); ?>" alt="Lecturer">
+              </span>
 							<h3><?php echo $item['project_name']; ?></h3>
 						</a>
 					</li>
@@ -137,12 +139,12 @@
 					'facebook' => base_url('img/icons/face.png'),
 					'linkin' => base_url('img/icons/in.png')
 					);
-               
+
                     foreach ( $lecture['social'] as $value ){
                         list($k,$v) = explode('*=*', $value);
                         $list[][$k] = $v;
                     }
-                
+
 				foreach ( $list as $val ){
 					foreach ( $val as $key => $item){?>
 						<li class="ins-bt-lf-li">
@@ -156,7 +158,7 @@
 				</ul>
 			</div>
 			<div id="desc" class="in-nm-inf ins-bott">
-				
+
 				<p class="ins-bt-rig-p">
 					<?=@$lecture['bio'];?>
 				</p>

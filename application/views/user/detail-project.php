@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Geolab</title>
-    <meta name="description" content="ჯეოლაბი." />
+    <title>GeoLab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 
@@ -10,19 +9,26 @@
     <link rel="stylesheet" href="<?php echo base_url('css/style.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('fonts/fonts.css'); ?>">
     <script src="<?php echo base_url('js/jquery.js'); ?>"></script>
-    <script src="<?php echo base_url('js/parallax.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/scripts.js'); ?>"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script src="<?php echo base_url('js/google_map.js'); ?>"></script>
-    <style>
-        .mn-wrp {
 
-            overflow: hidden;
+
+    <style>
+        @media (max-width: 600px){
+            .mn-header input {
+                height: 45px;
+            }
+        }
+
+        body{
+            overflow-y: overlay;
+            overflow-x: hidden;
         }
     </style>
 </head>
 <body>
-<div class="content">
+<div class="content" style="overflow-x: hidden">
+
+	<div class="mn-wrp ins-wrp">
 <!-- registration & login -->
 <div  class="form-wrapper">
     <div class="form-header">
@@ -86,18 +92,94 @@
     </nav>
 
 </div>
+		<header class="mn-header">
+
+			<nav class="mn-menu-wrapper">
+
+				<ul class="mn-ul">
+					<li class="mn-li mn-show"></li>
+					<li class="mn-li mn-lgn"></li>
+				</ul>
+                <a class="header-click" href="<?=site_url('');?>"></a>
+				<input type="text" >
+			</nav>
+
+		</header>
+
+		<div class="ins-cont">
+			<div class="in-img ins-top" style="<?='background:url('.base_url('img/img/'.$projects['project_image']).') no-repeat 50% 50%;background-size: cover;';?>"></div>
+			<div class="in-prtf ins-top">
+				<ul class="sec-fiv-ul sec-fiv-ul-ins">
+          <?php foreach($projects['lecture'] as $row): ?>
+					<li class="sec-fiv-li sec-fiv-li-ins">
+						<a href="<?php echo site_url('pages/lecture/'.$row['lec_id']); ?>">
+              <span style="position:relative; width: 118px;
+    height: 118px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0 0 11px rgba(117, 129, 175, 0.4);">
+              <img class="" src="<?php echo base_url('img/img/'.$row['pic_name']); ?>" alt="Lecturer" >
+            </span>
+
+							<h3><?php echo $row['name']; ?></h3>
+						</a>
+					</li>
+        <?php endforeach; ?>
+				</ul>
+			</div>
+			<div class="in-nm-soc ins-bott">
+				<h3 class="ins-prof"><?=@$projects['project_name'];?></h3>
+				<p>
+				  <a href="<?=@$projects['project_url'];?>" class="ins-prof-name" target="_blank"><?=@$projects['project_url'];?></a>
+				</p>
+			</div>
+			<div id="desc" class="in-nm-inf ins-bott">
+
+				<p class="ins-bt-rig-p">
+					<?=@$projects['project_description'];?>
+				</p>
+
+			</div>
+		</div>
+
+        <div class="mn-menu-btm">
+            <div class="mn-btm-ul">
+                <div class="second-nav-wrap">
+                    <div class="mn-btm-li"><a href="<?=site_url('environment');?>">გარემო</a></div>
+                    <div class="mn-btm-li"><a href="<?=site_url('direction');?>">მიმართულებები</a></div>
+                </div>
+                <div class="second-nav-wrap">
+                    <div class="mn-btm-li"><a href="<?=site_url('profesors'); ?>">პროფესორები</a></div>
+                    <div class="mn-btm-li"><a href="<?=site_url('model');?>">მოდელი</a></div>
+                </div>
+            </div>
+        </div>
+
+	</div>
+</div>
+</body>
 
 
-    <header class="mn-header">
+<style>
+    @media (max-width: 800px) {
+        .mn-menu-btm{
+            display: none;
+        }
 
-        <nav class="mn-menu-wrapper">
+    }
 
-            <ul class="mn-ul">
-                <li class="mn-li mn-show"></li>
-                <li class="mn-li mn-lgn"></li>
-            </ul>
-            <a class="header-click" href="<?=site_url('');?>"></a>
-            <input type="text">
-        </nav>
+</style>
+<script src="<?php echo base_url('js/jquery.mCustomScrollbar.js'); ?>"></script>
 
-    </header>
+<script>
+    $(document).ready(function(){
+        //$('.form-wrapper').css('height', $(window).height());
+        $("nav.mn-menu").mCustomScrollbar({
+            theme:"minimal"
+        });
+        $("#desc").mCustomScrollbar({
+            theme:"minimal"
+        });
+    });
+</script>
+</html>

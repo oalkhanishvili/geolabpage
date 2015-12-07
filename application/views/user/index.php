@@ -37,7 +37,7 @@
 <section class="sec mn-sc sec-<?=$x; ?>">
     <div class="sec-cnt-wrp">
 
-        <a href="<?=$item['project_url'];?>" target="_blank">
+        <a href="<?=site_url('pages/projects/'.$item['id']);?>">
 
             <img src="<?=base_url('img/img/'.$item['project_image']);?>" alt="Lecturer">
             <br>

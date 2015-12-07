@@ -55,5 +55,6 @@ $route['(:any)'] = 'Pages/$1';
 $route['news/(:any)'] = 'Pages/news/$1';
 $route['lecture/(:any)'] = 'Pages/lecture/$1';
 $route['equipment'] = 'Pages/equipment';
+$route['projects/(:any)'] = 'Pages/projects/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

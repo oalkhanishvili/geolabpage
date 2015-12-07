@@ -1,8 +1,8 @@
 
-    <div class="txt-wrp">
+    <div class="txt-wrp model">
 
 
-        <h1>გარემო</h1>
+        <h1>მოდელი</h1>
 
         <nav class="mn-menu-btm">
             <div class="mn-btm-ul">
@@ -24,10 +24,10 @@
         <div class="img-area">
 
             <div class="img-txt-wrp">
-                <img src="img/img/txt-1.jpg" alt="image">
+                <img src="<?=base_url('/img/img/'.$item['image']);?>" alt="image">
 
                 <h5>
-                    <span></span>by George Luis
+                    <span><?=$item['title'];?></span>
                 </h5>
             </div>
 
@@ -35,9 +35,7 @@
         </div>
 
         <article class="article">
-            <p>
-აქ მითითებული რომ ლები 24 საათი მუშაობს და რომ ლებში მენტორები არიან. მოკლედ ბევრი ტექსტი არ იქნება ამიტომ მოსაფიქრებელია რამე მოკლე ტექსტისათვის რომელიც მესიჯების სახით იქნება. სამაგიეროდ გევრი ფორტო შეგვიძლაი დავდოთ აქ.
-            </p>
+            <?=$item['content'];?>
         </article>
 
 

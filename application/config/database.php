@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'geolabclass',
+	'hostname' => '176.28.22.210',
+	'username' => 'geolab',
+	'password' => 'GeOWLab!@!&20_15',
+	'database' => 'geolab_geolabpage',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

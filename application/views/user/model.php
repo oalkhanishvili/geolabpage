@@ -20,15 +20,14 @@
     </div>
 
     <div class="txt-content">
-    <?php if ( !empty($direction) ):
-            foreach ( $direction as $item ): ?>
+
         <div class="img-area">
 
             <div class="img-txt-wrp">
-                <img src="img/img/txt-1.jpg" alt="image">
+                <img src="<?=base_url('/img/img/'.$item['image']);?>" alt="image">
 
                 <h5>
-                    <span><?=$item['title'];?></span>by George Luis
+                    <span><?=$item['title'];?></span>
                 </h5>
             </div>
 
@@ -36,12 +35,9 @@
         </div>
 
         <article class="article">
-            <p>
-                <?=$item['content'];?>
-            </p>
+            <?=$item['content'];?>
         </article>
-    <?php endforeach;
-        endif; ?>
+
 
 
 

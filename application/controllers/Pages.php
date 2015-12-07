@@ -21,7 +21,7 @@ class Pages extends CI_Controller {
 	}
 	public function lecture($id){
 		$data['lecture'] = $this->User_model->selectById('lecture', $id);
-		$data['project'] = $this->User_model->innerSelectProject($id);
+		$data['project'] = $this->User_model->innerSelectLecture($id);
 		$this->load->view('user/inside', $data);
 	}
 	public function direction(){
@@ -32,7 +32,8 @@ class Pages extends CI_Controller {
 	}
 	public function model(){
 		$this->load->view('user/header');
-		$this->load->view('user/model');
+		$data['item'] = $this->User_model->selectPages('pages','model');
+		$this->load->view('user/model',$data);
 		$this->load->view('user/footer');
 	}
 	public function news($id=''){
@@ -67,14 +68,21 @@ class Pages extends CI_Controller {
 	}
 	public function workinghours(){
 		$this->load->view('user/header');
-		$this->load->view('user/workinghours');
+		$data['item'] = $this->User_model->selectPages('pages','workinghours');
+		$this->load->view('user/workinghours', $data);
 		$this->load->view('user/footer');
 	}
-	public function projects(){
-		$data['projects'] = $this->User_model->innerSelectProject();
-		$this->load->view('user/header');
-		$this->load->view('user/projects', $data);
-		$this->load->view('user/footer');
+	public function projects($id=''){
+
+		if (empty($id)){
+			$this->load->view('user/header');
+			$data['projects'] = $this->User_model->select('project');
+			$this->load->view('user/projects', $data);
+			$this->load->view('user/footer');
+		}else{
+			$data['projects'] = $this->User_model->innerSelectProject($id);
+			$this->load->view('user/detail-project', $data);
+		}
 	}
 	public function price(){
 		$this->load->view('user/header');
