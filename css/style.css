@@ -310,6 +310,12 @@ html, body {
     height: 400px;
     z-index: 1;
 }
+.map-small {
+    position: absolute;
+    width: 600px !important;
+    height: 400px;
+    z-index: 1;
+}
 
 .map-outer {
     position: absolute;

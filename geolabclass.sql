@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2015 at 01:05 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Nov 27, 2015 at 08:16 PM
+-- Server version: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admins` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(255) CHARACTER SET utf8 NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -46,7 +46,7 @@ INSERT INTO `admins` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `direction` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 NOT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
   `image` text CHARACTER SET utf8 NOT NULL
@@ -70,7 +70,7 @@ INSERT INTO `direction` (`id`, `title`, `content`, `image`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `equipment` (
-`id` int(5) NOT NULL,
+  `id` int(5) NOT NULL,
   `model` varchar(255) CHARACTER SET utf8 NOT NULL,
   `description` text CHARACTER SET utf8 NOT NULL,
   `sponsor` varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -115,7 +115,7 @@ INSERT INTO `equipment` (`id`, `model`, `description`, `sponsor`, `num`, `image`
 --
 
 CREATE TABLE IF NOT EXISTS `lecture` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` text CHARACTER SET utf8 NOT NULL,
   `direction` text CHARACTER SET utf8 NOT NULL,
   `direction_id` int(11) NOT NULL,
@@ -150,7 +150,7 @@ INSERT INTO `lecture` (`id`, `name`, `direction`, `direction_id`, `bio`, `pic_na
 --
 
 CREATE TABLE IF NOT EXISTS `merge` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   `lecture_id` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
@@ -178,7 +178,7 @@ INSERT INTO `merge` (`id`, `project_id`, `lecture_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 NOT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
   `image` varchar(255) NOT NULL,
@@ -203,7 +203,7 @@ INSERT INTO `news` (`id`, `title`, `content`, `image`, `date`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `pages` (
-`id` int(5) NOT NULL,
+  `id` int(5) NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 NOT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
   `image` varchar(255) NOT NULL,
@@ -225,7 +225,7 @@ INSERT INTO `pages` (`id`, `title`, `content`, `image`, `controller`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `project` (
-`id` int(5) NOT NULL,
+  `id` int(5) NOT NULL,
   `project_name` text CHARACTER SET utf8 NOT NULL,
   `project_description` text CHARACTER SET utf8 NOT NULL,
   `project_image` text CHARACTER SET utf8 NOT NULL,
@@ -252,49 +252,49 @@ INSERT INTO `project` (`id`, `project_name`, `project_description`, `project_ima
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `direction`
 --
 ALTER TABLE `direction`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `equipment`
 --
 ALTER TABLE `equipment`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lecture`
 --
 ALTER TABLE `lecture`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `merge`
 --
 ALTER TABLE `merge`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pages`
 --
 ALTER TABLE `pages`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `project`
 --
 ALTER TABLE `project`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -304,42 +304,42 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `direction`
 --
 ALTER TABLE `direction`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `merge`
 --
 ALTER TABLE `merge`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

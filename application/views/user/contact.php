@@ -43,16 +43,35 @@
     <?php endforeach;
         endif; ?>
       <section class="sec-six">
-    <div class="sec-six-ttl">
+      
+    <div class="sec-six-ttl" style="background:#FFF;">
         <h3>სად არის ჯეოლაბი?</h3>
     </div>
-
-    <div class="map-outer">
+    <style>
+    .leftmap{
+        width: 50%;
+    }
+    .canvasWidth{
+        min-width: 600px;
+        float: right;
+        /*margin-right: 50px;*/
+    }
+    .map-out{
+        width: 600px;
+        /*margin-right: 50px;*/
+        right: 0;
+    }
+    </style>
+    <aside class="floatLeft">
+    <div class="map-outer map-out">
         <button>იპოვნე რუკაზე</button>
         <h6>ჯეოლაბი მდებარეობს ქართულ ამერიკული უნივერსიტეტის (GAU) შენობაში: მერაბ ალექსიძის 8.</h6>
     </div>
-
-    <div id="map-canvas"></div>
+   
+    <div class="canvasWidth">
+        <div id="map-canvas" class="map-small"></div>
+    </div>
+    </aside>
 </section>
 
 

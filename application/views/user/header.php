@@ -13,6 +13,7 @@
     <script src="<?php echo base_url('js/scripts.js'); ?>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script src="<?php echo base_url('js/google_map.js'); ?>"></script>
+
     <style>
         .mn-wrp {
 
@@ -76,7 +77,7 @@
                 </ul>
             </li>
             <li class="mnu-li">
-                <a href="<?=site_url('');?>"><h1>კონტაქტი</h1></a>
+                <a href="<?=site_url('contact');?>"><h1>კონტაქტი</h1></a>
             </li>
             <li class="mnu-li">
                 <a href="<?=site_url('');?>"><h1>ონლაინ მაილ ფორმა</h1></a>
